@@ -1,0 +1,11 @@
+{
+  "name": "pie-control-panel",
+  "version": "1.0.0",
+  "description": "A control panel element",
+  "repository": "https://github.com/PieLabs/pie-control-panel",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
