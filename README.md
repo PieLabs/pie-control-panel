@@ -11,7 +11,7 @@ A custom element with controls for testing out a [pie](http://github.com/PieLabs
 
     var panel = document.querySelector('pie-control-panel');
     panel.env = { mode: 'gather' };
-    panel.addEventListener('pie.envChanged', function(event){
+    panel.addEventListener('envChanged', function(event){
       //do something with the updated env in `event.target.env`
     });
   </script>
