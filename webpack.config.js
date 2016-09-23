@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    demo: './test/entry.js'
+    demo: './test-build/entry.js'
   },
   output: {
     path: "./test",

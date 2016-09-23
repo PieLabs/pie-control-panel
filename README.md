@@ -26,3 +26,11 @@ A custom element with controls for testing out a [pie](http://github.com/PieLabs
 import PieControlPanel from 'pie-control-panel';
 document.registerElement('pie-control-panel', PieControlPanel);
 ```
+
+## Test 
+
+We use webpack to build a bundle and [web-component-tester](https://github.com/Polymer/web-component-tester) to test the element.
+
+```
+npm test (calls webpack && wct)
+```

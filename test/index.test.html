@@ -8,11 +8,48 @@
 <body>
   <pie-control-panel></pie-control-panel>
   <script>
+
     suite('<pie-control-panel>', function() {
-      test('is awesomest', function() {
+      
+      test('has gather input', function() {
         var el = document.querySelector('pie-control-panel');
-        console.log(el.innerHTML);
-        assert(el);
+        var input = el.querySelector('input[value="gather"]');
+        expect(input).not.to.be.null;
+      });
+      
+      test('has view input', function() {
+        var el = document.querySelector('pie-control-panel');
+        var input = el.querySelector('input[value="view"]');
+        expect(input).not.to.be.null;
+      });
+      
+      test('has evaluate input', function() {
+        var el = document.querySelector('pie-control-panel');
+        var input = el.querySelector('input[value="evaluate"]');
+        expect(input).not.to.be.null;
+      });
+
+      test('clicking a mode triggers an envChanged event', function(done) {
+        var el = document.querySelector('pie-control-panel');
+        el.env = { mode: 'gather'};
+        var input = el.querySelector('input[value="evaluate"]');
+        el.addEventListener('envChanged', function(){
+          done();
+        });
+        input.setAttribute('checked', true);
+        input.dispatchEvent(new CustomEvent('change'));
+      });
+      
+      test('choosing select option triggers an envChanged event', function(done) {
+        var el = document.querySelector('pie-control-panel');
+        el.env = { mode: 'gather'};
+        var select = el.querySelector('select[name="colorContrast"]');
+        select.value = 'white_on_black';
+        el.addEventListener('envChanged', function(event){
+          expect(event.target.env.accessibility).to.eql({colorContrast: 'white_on_black'});
+          done();
+        });
+        select.dispatchEvent(new CustomEvent('change'));
       });
     });
   </script>
