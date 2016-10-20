@@ -1,2 +1,2 @@
 import PieControlPanel from '../lib/index';
-document.registerElement('pie-control-panel', PieControlPanel);
+customElements.define('pie-control-panel', PieControlPanel);

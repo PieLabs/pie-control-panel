@@ -1,6 +1,6 @@
 # pie-control-panel 
 
-A custom element with controls for testing out a [pie](http://github.com/PieLabs) element.
+A [v1 custom element](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) with controls for testing out a [pie](http://github.com/PieLabs) element.
 
 ## Usage
 
@@ -19,12 +19,12 @@ A custom element with controls for testing out a [pie](http://github.com/PieLabs
 
 ## Browser Integration
 
-* This package exports an `es6` module, so you'll need to build this into a browser compatible bundle using something like [webpack](http://webpack.github.io) and [babel](http://babel.github.io).
-* This library doesn't register the custom element. You'll have to do that yourself like so: 
+* This package exports an `es6` module, until module loading is supported in the browser you'll need to use something like [webpack](http://webpack.github.io) to prepare a bundle that uses this.
+* This library doesn't call `customElements.define`. You'll have to do that yourself like so: 
 
 ```javascript
 import PieControlPanel from 'pie-control-panel';
-document.registerElement('pie-control-panel', PieControlPanel);
+customElements.define('pie-control-panel', PieControlPanel);
 ```
 
 ## Test 
