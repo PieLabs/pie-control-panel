@@ -46,7 +46,11 @@ export default class ControlPanel extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { view: 'gather', lang: 'en-us', colorContrast: 'white_on_black' };
+    this.state = {
+      view: this.props.view || 'gather',
+      lang: this.props.lang || 'en-us',
+      colorContrast: this.props.colorContrast || 'black_on_white'
+    };
   }
 
   onLangChange(event, index, value) {
@@ -65,6 +69,7 @@ export default class ControlPanel extends React.Component {
   }
 
   render() {
+
 
     let muiTheme = getMuiTheme();
 
