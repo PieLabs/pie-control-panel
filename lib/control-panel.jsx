@@ -1,19 +1,13 @@
 import React from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import IconMenu from 'material-ui/IconMenu';
-import IconButton from 'material-ui/IconButton';
-import FontIcon from 'material-ui/FontIcon';
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
 import MenuItem from 'material-ui/MenuItem';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import RaisedButton from 'material-ui/RaisedButton';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
-import map from 'lodash/map';
+import { ToolbarSeparator } from 'material-ui/Toolbar';
 import SelectField from 'material-ui/SelectField';
+import map from 'lodash/map';
+
+injectTapEventPlugin();
 
 class ChoiceGroup extends React.Component {
 
@@ -38,7 +32,7 @@ class ChoiceGroup extends React.Component {
       {map(this.props.options, (o) => {
         return <MenuItem key={o} value={o} primaryText={o} />
       })}
-    </SelectField >;
+    </SelectField>;
   }
 }
 
