@@ -9,7 +9,7 @@ import map from 'lodash/map';
 
 injectTapEventPlugin();
 
-class ChoiceGroup extends React.Component {
+export class ChoiceGroup extends React.Component {
 
   constructor(props) {
     super(props);
