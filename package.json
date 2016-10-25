@@ -19,7 +19,6 @@
     "mocha": "^3.1.2",
     "react-addons-test-utils": "^15.3.2",
     "sinon": "^1.17.6",
-    "web-component-tester": "^4.3.4",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.9"
   },
