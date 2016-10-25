@@ -24,7 +24,7 @@ A custom element with controls for testing out a [pie](http://github.com/PieLabs
 
 ```javascript
 import PieControlPanel from 'pie-control-panel';
-document.registerElement('pie-control-panel', PieControlPanel);
+customElements.define('pie-control-panel', PieControlPanel);
 ```
 
 ## Test 
