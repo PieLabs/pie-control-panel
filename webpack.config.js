@@ -9,6 +9,14 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.jsx$/,
+        loader: 'babel',
+        query: {
+          babelrc: false,
+          presets: ['react']
+        }
+      },
+      {
         test: /\.less$/,
         loader: "style!css!less"
       }
