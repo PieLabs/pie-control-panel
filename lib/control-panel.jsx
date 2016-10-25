@@ -42,7 +42,7 @@ export default class ControlPanel extends React.Component {
     super(props);
     this.state = {
       view: this.props.view || 'gather',
-      lang: this.props.lang || 'en-us',
+      lang: this.props.lang || 'en-US',
       colorContrast: this.props.colorContrast || 'black_on_white'
     };
   }
@@ -95,6 +95,6 @@ export default class ControlPanel extends React.Component {
 
 ControlPanel.defaultProps = {
   views: ['gather', 'view', 'evaluate'],
-  langs: ['en-us'],
+  langs: ['en-US', 'es-ES'],
   colorContrasts: ['black_on_white', 'white_on_black', 'black_on_rose']
 }

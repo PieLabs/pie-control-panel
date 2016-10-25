@@ -20,7 +20,7 @@ describe('<ControlPanel />', () => {
   });
 
   it('has a default state', () => {
-    expect(wrapper.state()).to.eql({ view: 'gather', lang: 'en-us', colorContrast: 'black_on_white' });
+    expect(wrapper.state()).to.eql({ view: 'gather', lang: 'en-US', colorContrast: 'black_on_white' });
   });
 
   it('calls onChange for lang', () => {
