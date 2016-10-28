@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import ControlPanel, { ChoiceGroup } from '../lib/control-panel';
+import ControlPanel, { ChoiceGroup, ScoreDisplay } from '../lib/control-panel';
 
 describe('<ControlPanel />', () => {
 
@@ -17,6 +17,10 @@ describe('<ControlPanel />', () => {
 
   it('renders three <ChoiceGroup /> components', () => {
     expect(wrapper.find(ChoiceGroup)).to.have.length(3);
+  });
+
+  it('renders one <ScoreDisplay /> components', () => {
+    expect(wrapper.find(ScoreDisplay)).to.have.length(1);
   });
 
   it('has a default state', () => {
@@ -37,4 +41,5 @@ describe('<ControlPanel />', () => {
     wrapper.instance().onContrastChange({}, 0, 'white_on_black');
     sinon.assert.calledWith(onChange, 'colorContrast', 'white_on_black');
   });
+
 });
