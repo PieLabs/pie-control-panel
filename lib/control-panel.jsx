@@ -75,13 +75,13 @@ export default class ControlPanel extends React.Component {
             options={this.props.views}
             value={this.state.view}
             onChange={this.onViewChange.bind(this)} />
-          <ToolbarSeparator />
+          <ToolbarSeparator style={{ display: 'inline-block' }} />
           <ChoiceGroup
             label={'lang'}
             options={this.props.langs}
             value={this.state.lang}
             onChange={this.onLangChange.bind(this)} />
-          <ToolbarSeparator />
+          <ToolbarSeparator style={{ display: 'inline-block' }} />
           <ChoiceGroup
             label={'color contrast'}
             options={this.props.colorContrasts}
