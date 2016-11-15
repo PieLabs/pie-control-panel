@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+  <script src="./bundle.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+    document.addEventListener('pie.control-panel-ready',function(event){
+      console.log('control panel is ready');
+      event.target.env = {};
+
+      var score = 1;
+
+      setInterval(function(){
+        event.target.score = "score:" + score++;
+      }, 2000);
+    }); 
+  </script>
+</head>
+
+<body>
+  <pie-control-panel></pie-control-panel>
+</body>
+
+</html>
