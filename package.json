@@ -1,6 +1,6 @@
 {
   "name": "pie-control-panel",
-  "version": "1.0.0",
+  "version": "1.0.1-prerelease",
   "description": "A control panel element",
   "repository": "https://github.com/PieLabs/pie-control-panel",
   "main": "lib/index.js",
