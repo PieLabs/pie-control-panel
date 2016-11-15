@@ -14,6 +14,13 @@
     document.addEventListener('pie.control-panel-ready',function(event){
       console.log('control panel is ready');
       event.target.env = {};
+
+      var score = 1;
+
+      setInterval(function(){
+        console.log("setting score to ", score);
+        event.target.score = "score:" + score++;
+      }, 2000);
     }); 
   </script>
 </head>

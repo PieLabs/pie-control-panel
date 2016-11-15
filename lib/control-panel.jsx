@@ -9,6 +9,25 @@ import map from 'lodash/map';
 
 injectTapEventPlugin();
 
+export class ScoreDisplay extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  getStyle() {
+    return {
+      'width' : '256px',
+      'paddingLeft': '10px',
+      'paddingRight': '10px',
+    }
+  }
+
+  render() {
+    return <span style={this.getStyle()}>{this.props.score}</span>;
+  }
+}
+
 export class ChoiceGroup extends React.Component {
 
   constructor(props) {
@@ -63,8 +82,6 @@ export default class ControlPanel extends React.Component {
   }
 
   render() {
-
-
     let muiTheme = getMuiTheme();
 
     return <div>
@@ -87,6 +104,8 @@ export default class ControlPanel extends React.Component {
             options={this.props.colorContrasts}
             value={this.state.colorContrast}
             onChange={this.onContrastChange.bind(this)} />
+          <ToolbarSeparator />
+          <ScoreDisplay score={this.props.score} />
         </span>
       </MuiThemeProvider>
     </div >;
@@ -96,5 +115,6 @@ export default class ControlPanel extends React.Component {
 ControlPanel.defaultProps = {
   views: ['gather', 'view', 'evaluate'],
   langs: ['en-US', 'es-ES'],
-  colorContrasts: ['black_on_white', 'white_on_black', 'black_on_rose']
+  colorContrasts: ['black_on_white', 'white_on_black', 'black_on_rose'],
+  score: ''
 }
