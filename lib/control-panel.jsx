@@ -20,6 +20,7 @@ export class ScoreDisplay extends React.Component {
       'width': '256px',
       'paddingLeft': '10px',
       'paddingRight': '10px',
+      'fontFamily': "'Roboto', san-serif"
     }
   }
 
