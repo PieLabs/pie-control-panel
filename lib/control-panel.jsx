@@ -17,7 +17,7 @@ export class ScoreDisplay extends React.Component {
 
   getStyle() {
     return {
-      'width' : '256px',
+      'width': '256px',
       'paddingLeft': '10px',
       'paddingRight': '10px',
     }
@@ -104,7 +104,7 @@ export default class ControlPanel extends React.Component {
             options={this.props.colorContrasts}
             value={this.state.colorContrast}
             onChange={this.onContrastChange.bind(this)} />
-          <ToolbarSeparator />
+          <ToolbarSeparator style={{ display: 'inline-block' }} />
           <ScoreDisplay score={this.props.score} />
         </span>
       </MuiThemeProvider>
