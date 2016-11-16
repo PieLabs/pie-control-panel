@@ -1,8 +1,12 @@
 {
   "name": "pie-control-panel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A control panel element",
-  "repository": "https://github.com/PieLabs/pie-control-panel",
+  "keywords" : ["pie"],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/PieLabs/pie-control-panel"
+  },
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --require babel-register test/**"
