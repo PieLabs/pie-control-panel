@@ -3,10 +3,12 @@
   "version": "1.1.0-prerelease",
   "description": "A control panel element",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/PieLabs/pie-control-panel"
-   },
-  "keywords" : ["pie"],
+    "type": "git",
+    "url": "https://github.com/PieLabs/pie-control-panel"
+  },
+  "keywords": [
+    "pie"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --require babel-register test/**"
@@ -27,8 +29,10 @@
     "babel-preset-react": "^6.16.0",
     "chai": "^3.5.0",
     "enzyme": "^2.5.1",
+    "gulp": "^3.9.1",
     "mocha": "^3.1.2",
     "react-addons-test-utils": "^15.4.0",
+    "release-helper": "github:pielabs/release-helper",
     "sinon": "^1.17.6",
     "web-component-tester": "^5.0.0",
     "webpack": "^2.1.0-beta.25",
