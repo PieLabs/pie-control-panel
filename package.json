@@ -13,11 +13,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.16.4",
-    "material-ui": "^0.16.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-tap-event-plugin": "^1.0.0"
+    "lodash": "^4.17.2",
+    "material-ui": "^0.16.2",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -28,9 +28,9 @@
     "chai": "^3.5.0",
     "enzyme": "^2.5.1",
     "mocha": "^3.1.2",
-    "react-addons-test-utils": "^15.3.2",
+    "react-addons-test-utils": "^15.4.0",
     "sinon": "^1.17.6",
-    "web-component-tester": "^4.3.4",
+    "web-component-tester": "^5.0.0",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.9"
   }
