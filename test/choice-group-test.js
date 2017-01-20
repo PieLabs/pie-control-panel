@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { expect } from 'chai';
-import { ChoiceGroup } from '../lib/control-panel';
+import ChoiceGroup from '../lib/choice-group';
 import MenuItem from 'material-ui/MenuItem';
 import SelectField from 'material-ui/SelectField';
 
