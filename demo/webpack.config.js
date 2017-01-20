@@ -22,6 +22,9 @@ module.exports = {
         loader: "style!css!less"
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   }
 };
 

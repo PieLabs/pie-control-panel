@@ -2,59 +2,13 @@ import React from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MenuItem from 'material-ui/MenuItem';
 import { ToolbarSeparator } from 'material-ui/Toolbar';
-import SelectField from 'material-ui/SelectField';
-import map from 'lodash/map';
+import ChoiceGroup from './choice-group';
+import ScoreDisplay from './score-display';
+
+export { ChoiceGroup, ScoreDisplay };
 
 injectTapEventPlugin();
-
-export class ScoreDisplay extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  getStyle() {
-    return {
-      'width': '256px',
-      'paddingLeft': '10px',
-      'paddingRight': '10px',
-      'fontFamily': "'Roboto', san-serif"
-    }
-  }
-
-  render() {
-    return <span style={this.getStyle()}>{this.props.score}</span>;
-  }
-}
-
-export class ChoiceGroup extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  getStyle() {
-    return {
-      'paddingLeft': '10px',
-      'paddingRight': '10px',
-    }
-  }
-
-  render() {
-    return <SelectField
-      floatingLabelText={this.props.label}
-      value={this.props.value}
-      style={this.getStyle()}
-      onChange={this.props.onChange} >
-      {map(this.props.options, (o) => {
-        return <MenuItem key={o} value={o} primaryText={o} />
-      })}
-    </SelectField>;
-  }
-}
 
 export default class ControlPanel extends React.Component {
 
@@ -82,34 +36,42 @@ export default class ControlPanel extends React.Component {
     this.props.onChange('colorContrast', value);
   }
 
+
+
+
   render() {
     let muiTheme = getMuiTheme();
 
-    return <div>
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <span>
-          <ChoiceGroup
-            label={'view'}
-            options={this.props.views}
-            value={this.state.view}
-            onChange={this.onViewChange.bind(this)} />
-          <ToolbarSeparator style={{ display: 'inline-block' }} />
-          <ChoiceGroup
-            label={'lang'}
-            options={this.props.langs}
-            value={this.state.lang}
-            onChange={this.onLangChange.bind(this)} />
-          <ToolbarSeparator style={{ display: 'inline-block' }} />
-          <ChoiceGroup
-            label={'color contrast'}
-            options={this.props.colorContrasts}
-            value={this.state.colorContrast}
-            onChange={this.onContrastChange.bind(this)} />
-          <ToolbarSeparator style={{ display: 'inline-block' }} />
-          <ScoreDisplay score={this.props.score} />
-        </span>
-      </MuiThemeProvider>
-    </div >;
+
+    const separatorStyle = {
+      'marginLeft': '0',
+      'marginRight': '0',
+      'display': 'inline-block'
+    }
+
+    return <MuiThemeProvider muiTheme={muiTheme}>
+      <div>
+        <ChoiceGroup
+          label={'view'}
+          options={this.props.views}
+          value={this.state.view}
+          style={{ width: '100px' }}
+          onChange={this.onViewChange.bind(this)} />
+        <ToolbarSeparator style={separatorStyle} />
+        <ChoiceGroup
+          label={'lang'}
+          options={this.props.langs}
+          value={this.state.lang}
+          onChange={this.onLangChange.bind(this)} />
+        <ToolbarSeparator style={separatorStyle} />
+        <ChoiceGroup
+          label={'color contrast'}
+          options={this.props.colorContrasts}
+          value={this.state.colorContrast}
+          onChange={this.onContrastChange.bind(this)} />
+        <ScoreDisplay score={this.props.score} />
+      </div >
+    </MuiThemeProvider>;
   }
 }
 
